@@ -15,7 +15,7 @@ class SuplierController extends Controller
      */
     public function index()
     {
-        $supliers = Suplier::all();
+        $supliers = Suplier::with('barang')->get();
         return response()->json($supliers);
     }
 
